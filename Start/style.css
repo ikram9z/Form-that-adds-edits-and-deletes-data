@@ -1,0 +1,21 @@
+﻿.container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+    .container1 > div {
+/*        flex: 50%;*/
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+.submitbtn {
+    width: 70px;
+    margin-top: 40px;
+}
+
+.showformbtn {
+    width: 120px;
+}
