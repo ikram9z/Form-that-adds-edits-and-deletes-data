@@ -28,8 +28,9 @@ namespace Start
                 connection.Open();
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);//SqlDataAdapter: Represents a set of data commands and a database connection
+                                                                     //that are used to fill the DataSet/DataTable and update a SQL Server database
+                DataTable dt = new DataTable(); //Represents one table of in-memory data.
                 adapter.Fill(dt);
                 repeater.DataSource = dt;
                 repeater.DataBind();

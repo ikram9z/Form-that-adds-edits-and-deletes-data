@@ -29,19 +29,21 @@
             <asp:Repeater runat="server" Id ="repeater">
                 <HeaderTemplate>
                     <table>
-                        <thead>
-                            <td>Name</td>
-                            <td>Gender</td>
-                            <td>Phone Number</td>
-                            <td>Address</td>
-                        </thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Phone Number</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                        </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
                         <td><%# Eval("Name") %></td>
                         <td><%# Eval("Gender") %></td>
                         <td><%# Eval("PhoneNumber") %></td>
-                        <td><%# Eval("Address") %></td>                  
+                        <td><%# Eval("Address") %></td>
+                        <td>Edit</td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
