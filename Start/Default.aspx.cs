@@ -14,14 +14,26 @@ namespace Start
     public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        
         {
 
             try
             {
-                string connectionString = "Data Source = Ikram\\SQLExpress;Initial Catalog = Pracitce; ";
+                //string connectionString = "Data Source = Ikram\\SQLExpress;Initial Catalog = Practice; "; login was failing with this connection string
+                // I used Integrated Security = true, the error went away
+                string connectionString =
+                  "Data Source = Ikram\\SQLEXPRESS; Initial Catalog = Practice; Integrated Security = true;";
                 SqlConnection connection = new SqlConnection(connectionString);
                 string queryString = "GetData";
-                SqlCommand command = new SqlCommand(queryString,connection);
+                connection.Open();
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                repeater.DataSource = dt;
+                repeater.DataBind();
+                connection.Close();
 
             }
             catch
@@ -92,7 +104,7 @@ namespace Start
                 command.Parameters.AddWithValue("Address", address);
 
                 connection.Open(); // Switches on the connection
-              
+
                 int ireturn = command.ExecuteNonQuery();
                 if (ireturn > 0)
                 {
@@ -106,7 +118,7 @@ namespace Start
 
                 connection.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //MeesageBox.Show(ex.Message);
             }

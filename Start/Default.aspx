@@ -25,11 +25,30 @@
                 <asp:Button ID="submitbtn" class="submitbtn" OnClick="SubmitDetails" runat="server" Text="Submit"></asp:Button>
             </div>
         </section>
-        <div class="datacontainer">
-            <asp:Repeater runat="server">
-                
+        <section>
+            <asp:Repeater runat="server" Id ="repeater">
+                <HeaderTemplate>
+                    <table>
+                        <thead>
+                            <td>Name</td>
+                            <td>Gender</td>
+                            <td>Phone Number</td>
+                            <td>Address</td>
+                        </thead>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <td><%# Eval("Name") %></td>
+                        <td><%# Eval("Gender") %></td>
+                        <td><%# Eval("PhoneNumber") %></td>
+                        <td><%# Eval("Address") %></td>                  
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </table>
+                </FooterTemplate>
             </asp:Repeater>
-        </div>
+        </section>
     </main>
 
 </asp:Content>
