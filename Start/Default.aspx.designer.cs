@@ -33,40 +33,40 @@ namespace Start
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl container;
 
         /// <summary>
-        /// name control.
+        /// name1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText name1;
 
         /// <summary>
-        /// gender control.
+        /// gender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText gender;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText gender1;
 
         /// <summary>
-        /// phonenumber control.
+        /// phonenumber1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText phonenumber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText phonenumber1;
 
         /// <summary>
-        /// address control.
+        /// address1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText address;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText address1;
 
         /// <summary>
         /// submitbtn control.

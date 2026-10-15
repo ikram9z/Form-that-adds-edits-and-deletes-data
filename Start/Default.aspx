@@ -8,36 +8,27 @@
             <div class="container1" id="container" runat="server" visible="false">
                 <div>
                     <label>Enter Name</label>
-                    <input type="text" id="name" runat="server" />
+                    <input type="text" id="name1" runat="server" />
                 </div>
                 <div>
                     <label>Enter Gender</label>
-                    <input type="text" id="gender" runat="server" />
+                    <input type="text" id="gender1" runat="server" />
                 </div>
                 <div>
                     <label>Enter phone number</label>
-                    <input type="text" id="phonenumber" runat="server" />
+                    <input type="text" id="phonenumber1" runat="server" />
                 </div>
                 <div>
                     <label>Enter address</label>
-                    <input type="text" id="address" runat="server" />
+                    <input type="text" id="address1" runat="server" />
                 </div>
                 <asp:Button ID="submitbtn" class="submitbtn" OnClick="SubmitDetails" runat="server" Text="Submit"></asp:Button>
             </div>
         </section>
         <div class="datacontainer">
-            <div>
-                <label>Name</label>
-            </div>
-            <div>
-                <label>Gender</label>
-            </div>
-            <div>
-                <label>Phone Number</label>
-            </div>
-            <div>
-                <label>Address</label>
-            </div>
+            <asp:Repeater runat="server">
+                
+            </asp:Repeater>
         </div>
     </main>
 

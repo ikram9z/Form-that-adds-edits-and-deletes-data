@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//using System.Windows.Forms;
 
 namespace Start
 {
@@ -11,6 +15,19 @@ namespace Start
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            try
+            {
+                string connectionString = "Data Source = Ikram\\SQLExpress;Initial Catalog = Pracitce; ";
+                SqlConnection connection = new SqlConnection(connectionString);
+                string queryString = "GetData";
+                SqlCommand command = new SqlCommand(queryString,connection);
+
+            }
+            catch
+            {
+
+            }
 
         }
         public void ToggleVisibility(object sender, EventArgs e)
@@ -24,19 +41,78 @@ namespace Start
         }
         public void SubmitDetails(object sender, EventArgs e)
         {
-            object[] parrams = new object[4];
-            parrams[0] = name.Value;
-            parrams[1] = gender.Value;
-            parrams[2] = phonenumber.Value;
-            parrams[3] = address.Value;
-            name.Value = "";
-            gender.Value = "";
-            phonenumber.Value = "";
-            address.Value = "";
-            int ireturn = DBase.ExecuteNonQuery("InsertData", parrams); // it was showing error earlier, I restarted the computer error got away.
-            // show success message
-            //if (ireturn > 0)
+            //string connectionString =
+            //    "Data Source=Ikram\\SQLEXPRESS;Initial Catalog=Practice;Integrated Security=True;";
+
+            // Documentation approach contains using statement, I feel the code was more complicated, so I read an article of c-sharpcorner
+            //// Create a sql connection
+            //using (SqlConnection connection = new SqlConnection(connectionString)) 
+            //{
+            //    // Stored procedure to execute against a SQL Server database.
+            //    using (SqlCommand command = new SqlCommand("[dbo].[InsertData]", connection))
+            //    {
+            //        command.CommandType = CommandType.StoredProcedure;  // It tells we are calling the stored procedure
+
+            //        command.Parameters.AddWithValue("Name", name.Value);
+            //        command.Parameters.AddWithValue("Gender", gender.Value);
+            //        command.Parameters.AddWithValue("PhoneNumber", phonenumber.Value);
+            //        command.Parameters.AddWithValue("Address", address.Value);
+
+            //        connection.Open();
+
+            //        int ireturn = command.ExecuteNonQuery();
+
+
+            //    }
+
+            // approach used in https://www.c-sharpcorner.com/article/using-stored-procedures-with-Asp-Net?srsltid=AU7gw4W9EKbOPzj9XjQPSeq6CMpFt6y3GLwpqaX5swpjkq68_QjiFb3-
+            // i feel code is easy to understand without the using statement, if the code takes a lot of width it becomes bit difficult to understand
+            // this approach is a result of c-sharpcorner website and a youtube video
+            try
+            {
+                //Most database providers require a connection string to connect to the database. 
+                string connectionString =
+                  "Data Source=Ikram\\SQLEXPRESS;Initial Catalog=Practice;Integrated Security=True;"; // copied from Web.Config
+                SqlConnection connection = new SqlConnection(connectionString);
+                // SqlCommand Class Represents stored procedure to execute against a SQL Server database.
+                string queryString = "InsertData";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // command.Parameters and passing value one by one was used in youtube video as well
+                //command.Paramters: Represents a collection of parameters associated with a SqlCommand
+                string name, gender, phonenumber, address;
+                name = name1.Value;
+                gender = gender1.Value;
+                phonenumber = phonenumber1.Value;
+                address = address1.Value;
+                command.Parameters.AddWithValue("Name", name);
+                command.Parameters.AddWithValue("Gender", gender);
+                command.Parameters.AddWithValue("PhoneNumber", phonenumber);
+                command.Parameters.AddWithValue("Address", address);
+
+                connection.Open(); // Switches on the connection
+              
+                int ireturn = command.ExecuteNonQuery();
+                if (ireturn > 0)
+                {
+                    name1.Value = "";
+                    gender1.Value = "";
+                    phonenumber1.Value = "";
+                    address1.Value = "";
+                }
+
+                // Turns off the connection
+
+                connection.Close();
+            }
+            catch(Exception ex)
+            {
+                //MeesageBox.Show(ex.Message);
+            }
 
         }
+
     }
+
 }
