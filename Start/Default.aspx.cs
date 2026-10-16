@@ -94,15 +94,33 @@ namespace Start
 
                 // command.Parameters and passing value one by one was used in youtube video as well
                 //command.Paramters: Represents a collection of parameters associated with a SqlCommand
-                string name, gender, phonenumber, address;
+                string name, gender, phonenumber, emailaddress;
+                string takingmeds;
+                DateTime dob;
+                int walk;
+                //DateTime dateofbirth;
                 name = name1.Value;
-                gender = gender1.Value;
+                gender = gender2.Value;
                 phonenumber = phonenumber1.Value;
-                address = address1.Value;
+                emailaddress = email1.Value;
+                dob = Convert.ToDateTime(date1);
+                walk = Convert.ToInt16(walk_indays.Value);
+                if (medication_yes.Checked == true)
+                {
+                    takingmeds = "Yes";
+                }
+                if (medication_no.Checked == true)
+                {
+                    takingmeds = "No";
+                }
+                //address = address1.Value;
                 command.Parameters.AddWithValue("Name", name);
                 command.Parameters.AddWithValue("Gender", gender);
                 command.Parameters.AddWithValue("PhoneNumber", phonenumber);
-                command.Parameters.AddWithValue("Address", address);
+                command.Parameters.AddWithValue("HowOftenGoForAWalkOutside", walk); //Adds a value to the end of the SqlParameterCollection.
+                command.Parameters.AddWithValue("DateOfBirth", dob);
+                command.Parameters.AddWithValue("Email", emailaddress);
+                //command.Parameters.AddWithValue("Address", address);
 
                 connection.Open(); // Switches on the connection
 
@@ -110,9 +128,9 @@ namespace Start
                 if (ireturn > 0)
                 {
                     name1.Value = "";
-                    gender1.Value = "";
+                    gender2.Value = "";
                     phonenumber1.Value = "";
-                    address1.Value = "";
+                    
                 }
 
                 // Turns off the connection

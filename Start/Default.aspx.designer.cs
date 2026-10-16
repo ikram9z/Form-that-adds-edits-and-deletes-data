@@ -42,15 +42,6 @@ namespace Start
         protected global::System.Web.UI.HtmlControls.HtmlInputText name1;
 
         /// <summary>
-        /// gender1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText gender1;
-
-        /// <summary>
         /// phonenumber1 control.
         /// </summary>
         /// <remarks>
@@ -60,13 +51,58 @@ namespace Start
         protected global::System.Web.UI.HtmlControls.HtmlInputText phonenumber1;
 
         /// <summary>
-        /// address1 control.
+        /// date1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText address1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date1;
+
+        /// <summary>
+        /// gender2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect gender2;
+
+        /// <summary>
+        /// email1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText email1;
+
+        /// <summary>
+        /// walk_indays control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText walk_indays;
+
+        /// <summary>
+        /// medication_yes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton medication_yes;
+
+        /// <summary>
+        /// medication_no control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton medication_no;
 
         /// <summary>
         /// submitbtn control.
