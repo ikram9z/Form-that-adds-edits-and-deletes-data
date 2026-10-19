@@ -4,12 +4,11 @@
     <link href="style.css" rel="stylesheet" />
     <main>
         <section class="row" aria-labelledby="aspnetTitle">
-            <div>
-                <h3>Health Examining Form
-                </h3>
+            <div class="heading">
+                <h2>Health Examining Form
+                </h2>
             </div>
-            <asp:Button ID="showformbtn" class="showformbtn" runat="server" OnClick="ToggleVisibility" Text="Show Form"></asp:Button>
-            <div class="container1" id="container" runat="server" visible="false">
+            <div class="container1" id="container" runat="server" >
                 <div>
                     <label>Enter Name</label>
                     <input type="text" id="name1" runat="server" />
@@ -47,57 +46,34 @@
                 <div>
                     <label>Are you taking any medication</label>
                     <div class="medication">
-                        <input type="radio" id="medication_yes" runat="server" name="medication" />
+                        <input type="radio" id="medication_yes" value="yes" runat="server" name="medication" />
                         <label>Yes</label>
-                        <input type="radio" id="medication_no" runat="server" name="medication" />
+                        <input type="radio" id="medication_no" value="no" runat="server" name="medication" />
                         <label>No</label>
                     </div>
                 </div>
                 <div>
                     <label>If, yes. Please list them</label>
-                    <input type="text" />
+                    <%--The HTML server controls are HTML elements that include a runat=server attribute.--%>
+                    <input type="text" runat="server" id="medicationTaken" />
                 </div>
                 <div>
                     <label>Do, you have any medication allergies</label>
                     <div>
-                        <input type="radio" runat="server" name="allergies" />
+                        <input type="radio" id="med_allergy_yes" runat="server" name="allergies" /> <%-- If med_allergy_yes.Checked == true , med_allergy_ = "Yes" --%>
                         <label>Yes</label>
-                        <input type="radio" runat="server" name="allergies" />
+                        <input type="radio" id="med_allergy_no" runat="server" name="allergies" />
                         <label>No</label>
                     </div>
                 </div>
                 <div>
                     <label>If, yes. Please list them</label>
-                    <input type="text" name="medicationallergies" />
+                    <input type="text" id="med_allergies_" runat="server" />
                 </div>
                 <asp:Button ID="submitbtn" class="submitbtn" OnClick="SubmitDetails" runat="server" Text="Submit Form"></asp:Button>
+                <asp:Button ID="updatebtn"  OnClick="UpdateDetails" Visible="false" runat="server" Text="Update Form" />
+                <asp:Button ID="deletebtn" OnClick="DeleteRecord" Visible="false" runat="server" Text="Delete Record" />
             </div>
-        </section>
-        <section>
-            <asp:Repeater runat="server" ID="repeater">
-                <HeaderTemplate>
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <th>Gender</th>
-                            <th>Phone Number</th>
-                            <th>Address</th>
-                            <th>Actions</th>
-                        </tr>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <tr>
-                        <td><%# Eval("Name") %></td>
-                        <td><%# Eval("Gender") %></td>
-                        <td><%# Eval("PhoneNumber") %></td>
-                        <td><%# Eval("Address") %></td>
-                        <td>Edit</td>
-                    </tr>
-                </ItemTemplate>
-                <FooterTemplate>
-                    </table>
-                </FooterTemplate>
-            </asp:Repeater>
         </section>
     </main>
 

@@ -1,10 +1,14 @@
-﻿.container1 {
+﻿.heading {
+    padding: 12px;
+}
+
+.container1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
     .container1 > div {
-/*        flex: 50%;*/
+        /*        flex: 50%;*/
         display: flex;
         gap: 10px;
         flex-direction: column;
@@ -22,5 +26,9 @@
 
 th, td {
     padding: 20px;
-/*    text-align: center;*/
+    /*    text-align: center;*/
+}
+
+.edit {
+    cursor: pointer;
 }

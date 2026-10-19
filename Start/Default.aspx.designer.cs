@@ -15,15 +15,6 @@ namespace Start
     {
 
         /// <summary>
-        /// showformbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button showformbtn;
-
-        /// <summary>
         /// container control.
         /// </summary>
         /// <remarks>
@@ -105,6 +96,42 @@ namespace Start
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton medication_no;
 
         /// <summary>
+        /// medicationTaken control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText medicationTaken;
+
+        /// <summary>
+        /// med_allergy_yes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton med_allergy_yes;
+
+        /// <summary>
+        /// med_allergy_no control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton med_allergy_no;
+
+        /// <summary>
+        /// med_allergies_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText med_allergies_;
+
+        /// <summary>
         /// submitbtn control.
         /// </summary>
         /// <remarks>
@@ -114,12 +141,21 @@ namespace Start
         protected global::System.Web.UI.WebControls.Button submitbtn;
 
         /// <summary>
-        /// repeater control.
+        /// updatebtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeater;
+        protected global::System.Web.UI.WebControls.Button updatebtn;
+
+        /// <summary>
+        /// deletebtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deletebtn;
     }
 }
